@@ -54,7 +54,7 @@ func _physics_process(delta):
 	#get directional input
 	input_direction = Input.get_vector("left","right","up","down")
 	var direction = (head.transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
-	if input_direction != Vector2(0, 0):
+	if input_direction != Vector2(0, 0) && is_on_floor():
 		$Head/ninja1_run/AnimationPlayer.play("walking/Armature_001Action")
 	
 	#calculate movement
